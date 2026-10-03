@@ -1,0 +1,23 @@
+Can adding bigrams fix information that preprocessing already deleted?
+
+I put our customer-review example into a small Python demo:
+
+“The product works, but the battery is not good.”
+
+Using scikit-learn’s CountVectorizer, I compared four settings:
+
+• Single words, retained: “not” survives.
+• English stop words removed: “not” disappears.
+• Single words + bigrams, retained: “not good” becomes a feature.
+• Single words + bigrams, stop words removed: “not good” is still missing.
+
+Adding bigrams cannot recover a word that was deleted first.
+
+All nine automated tests pass. This demonstrates preprocessing—not a trained sentiment classifier or an accuracy improvement.
+
+Code, setup instructions, and tests:
+https://github.com/krishna574ML/nlp_workflow
+
+What would you check in a text pipeline before training?
+
+#NLP #MachineLearning #Python
